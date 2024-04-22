@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  
+    <style>
+      /* Set background image for the specific section */
+      .section-background {
+        background-image: url('{% static "img/About.png" %}');
+        background-repeat: no-repeat;
+        width: 98vw; /* 100% viewport width */
+        height: 97vh; /* 100% viewport height */
+        font-family: Arial, sans-serif;
+        margin: 0; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        background-size: cover; /* Cover the entire container */
+        background-position: center; /* Center the image */
+        position: relative; /* Set position relative for absolute positioning */
+        color: #fff; /* Text color for contrast */
+      }
+
+      /* Basic styling for the menu bar */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 20px; /* Adjust as needed for vertical position */
+        right: 20px; /* Adjust as needed for horizontal position */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center items horizontally */
+      }
+
+      li {
+        margin-left: 20px;
+      }
+
+      li a {
+        display: block;
+        color: rgb(242, 236, 236);
+        text-align: center;
+        text-decoration: none;
+        padding: 14px 16px;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+      /* Style for the logo */
+      .logo {
+        position: absolute;
+        top: 20px; /* Adjust as needed for vertical position */
+        left: 20px; /* Adjust as needed for horizontal position */
+        max-width: 80px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      /* Basic styling for the content */
+      .content {
+        text-align: center;
+        padding: 20px;
+        max-width: 800px; /* Limit content width */
+      }
+
+      .box-container {
+        display: flex;
+        justify-content: space-around; /* Distribute space between boxes */
+        margin-top: 40px; /* Adjust spacing from the content */
+      }
+
+      /* Style for each box */
+      .box {
+        width: 350px;
+        height: 300px;
+        background-color: rgba(255, 255, 255, 0.1); /* Widget background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow for depth */
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image {
+      position: relative;
+      bottom: -80px; /* Adjust the distance from the bottom */
+      left: 850px; /* Adjust the distance from the right */
+      width: 600px; /* Adjust the width of the image */
+      height: auto; /* Maintain aspect ratio */
+      padding: 10px;
+    }
+
+    .bottom-left-content {
+      position: relative;
+      bottom: 270px; /* Adjust the distance from the bottom */
+      left: 100px; /* Adjust the distance from the left */
+      width: 600px; /* Adjust the width of the content */
+      font-size: large;
+    }
+    .site-footer {
+  position: relative;
+  bottom: 0;
+  width: 97%;
+  background-color: #1490ee;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content {
+  flex: 1;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media a {
+  color: #f8f6f6;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* Adjust the size of icons as needed */
+.social-media a {
+  font-size: 1.5rem;
+}
+
+     
+    </style>
+  </head>
+  <body>
+    <!-- Adding the content within the background section -->
+    <div class="section-background">
+      <img class="logo" src="{% static 'img/logo.png' %}" alt="Logo" />
+
+      <ul>
+        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{% url 'About' %}"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="{% url 'Service' %}"><i class="fas fa-tools"></i> Service</a></li>
+        <li><a href="{% url 'Contact' %}"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        <li><a href="{% url 'Login' %}"><i class="fas fa-user"></i> Login</a></li>
+        <!-- Add other menu items with icons as needed -->
+      </ul>
+      
+      <div class="content"></div>
+    </div>
+    <div class="box-container">
+      <div class="box">
+        <img
+          class="widget-img"
+          src="{% static 'img/Hardware.png' %}"
+          alt="Widget 4"
+          height="100px"
+        />
+
+        <h2>Hardware</h2>
+        <p>
+          Velit eget ridiculus dolor curabitur auctor nec consequat risus
+          dignissim bibendum tortor
+        </p>
+      </div>
+      <div class="box">
+        <img
+          class="widget-img"
+          src="{% static 'img/Software.png' %}"
+          alt="Antivirus"
+          height="100px"
+        />
+        <h2>Software</h2>
+
+        <p>
+          Velit eget ridiculus dolor curabitur auctor nec consequat risus
+          dignissim bibendum tortor
+        </p>
+      </div>
+      <div class="box">
+        <img
+          class="widget-img"
+          src="{% static 'img/Antivirus.png' %}"
+          alt="Antivirus"
+          height="100px"
+        />
+        <h2>Antivirus</h2>
+        <p>
+          Velit eget ridiculus dolor curabitur auctor nec consequat risus
+          dignissim bibendum tortor
+        </p>
+      </div>
+     
+  </div>
+ 
+    </div>
+    <img class="about-image" src="{% static 'img/About1.png' %}" alt="About1" />
+
+    <div class="bottom-left-content">
+        <h3>Who we are</h3>
+        <h1>We fix computers & business servers.</h1>
+        <p>Dictumst fringilla urna curabitur nam ornare risus hac feugiat libero ut. Metus justo quis velit eu elementum gravida natoque ac. Aliquam si sagittis morbi sapien urna tristique curae fusce himenaeos ultrices dui.</p>
+      </div>
+
+      <footer class="site-footer">
+        <div class="footer-content">
+          <p>Contact us: example@email.com</p>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Accessibility</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+          <!-- Font Awesome icons -->
+          <a href="#" class="fab fa-facebook-f"></a>
+          <a href="#" class="fab fa-twitter"></a>
+          <a href="#" class="fab fa-instagram"></a>
+        </div>
+      </footer>
+  </body>
+</html>

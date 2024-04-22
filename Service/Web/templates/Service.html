@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Services</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+      /* Set background image for the specific section */
+      .section-background {
+        background-image: url('{% static "img/Service.png" %}');
+        /* Replace "service_bg.jpg" with your actual image file */
+        background-repeat: no-repeat;
+        width: 98vw; /* 100% viewport width */
+        height: 97vh; /* 100% viewport height */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: #fff;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 20px; /* Adjust as needed for vertical position */
+        right: 20px; /* Adjust as needed for horizontal position */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center items horizontally */
+      }
+
+      li {
+        margin-left: 20px;
+      }
+
+      li a {
+        display: block;
+        color: rgb(242, 236, 236);
+        text-align: center;
+        text-decoration: none;
+        padding: 14px 16px;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+      /* Style for the logo */
+      .logo {
+        position: absolute;
+        top: 20px; /* Adjust as needed for vertical position */
+        left: 20px; /* Adjust as needed for horizontal position */
+        max-width: 80px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      /* First set of boxes */
+      .box-container {
+        display: flex;
+        justify-content: space-around; /* Distribute space between boxes */
+        margin-top: 40px; /* Adjust spacing from the content */
+      }
+
+      /* Style for each box */
+      .box {
+        width: 350px;
+        height: 300px;
+        background-color: rgba(255, 255, 255, 0.1); /* Widget background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow for depth */
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      /* Second set of boxes */
+      .second-box-container {
+        display: flex;
+        justify-content: space-around; /* Distribute space between boxes */
+        margin-top: 40px; /* Adjust spacing from the content */
+      }
+
+      /* Style for each second box */
+      .second-box {
+        width: 350px;
+        height: 300px;
+        background-color: rgba(255, 255, 255, 0.1); /* Widget background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow for depth */
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      /* Content alignment */
+      h3,
+      h1 {
+        text-align: center;
+      }
+
+      /* Bottom-left content */
+      .bottom-left-content {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+
+      .site-footer {
+  position: relative;
+  bottom: -20px;
+  width: 97%;
+  background-color: #1490ee;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content {
+  flex: 1;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media a {
+  color: #f8f6f6;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* Adjust the size of icons as needed */
+.social-media a {
+  font-size: 1.5rem;
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- Service page content within the background section -->
+    <div class="section-background">
+      <img class="logo" src="{% static 'img/logo.png' %}" alt="Logo" />
+      <ul>
+        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{% url 'About' %}"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="{% url 'Service' %}"><i class="fas fa-tools"></i> Service</a></li>
+        <li><a href="{% url 'Contact' %}"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        <li><a href="{% url 'Login' %}"><i class="fas fa-user"></i> Login</a></li>
+        <!-- Add other menu items with icons as needed -->
+      </ul>
+      
+    </div>
+    <h3>WHAT WE OFFER</h3>
+    <h1>We fix computers & business servers.</h1>
+    <!-- First set of boxes -->
+    <div class="box-container">
+      <!-- Box 1 -->
+      <div class="box">
+        <img
+        class="widget-img"
+        src="{% static 'img/Service1.png' %}"
+        alt="Widget 4"
+        height="100px"
+      />
+       <h1>Laptop</h1>
+       <p>Scelerisque tempor magnis vehicula pharetra eu justo dis donec dignissim rutrum bibendum</p>
+      </div>
+      <!-- Box 2 -->
+      <div class="box">
+        <img
+        class="widget-img"
+        src="{% static 'img/Service2.png' %}"
+        alt="Widget 4"
+        height="100px"
+      />
+       <h1>PC Desktop</h1>
+       <p>Scelerisque tempor magnis vehicula pharetra eu justo dis donec dignissim rutrum bibendum</p>
+      </div>
+      <!-- Box 3 -->
+      <div class="box">
+        <img
+        class="widget-img"
+        src="{% static 'img/Service3.png' %}"
+        alt="Widget 4"
+        height="100px"
+      />
+      <h1>Software</h1>
+      <p>Scelerisque tempor magnis vehicula pharetra eu justo dis donec dignissim rutrum bibendum</p>
+      </div>
+    </div>
+
+    <!-- Second set of boxes -->
+    <div class="second-box-container">
+     
+      <div class="second-box">
+        <img
+        class="widget-img"
+        src="{% static 'img/Service4.png' %}"
+        alt="Widget 4"
+        height="100px"
+      />
+      <h1>Backup Data</h1>
+      <p>Scelerisque tempor magnis vehicula pharetra eu justo dis donec dignissim rutrum bibendum</p>
+      </div>
+      <!-- Second Box 2 -->
+      <div class="second-box">
+        <img
+        class="widget-img"
+        src="{% static 'img/Service5.png' %}"
+        alt="Widget 4"
+        height="100px"
+      />
+       <h1>Antivirus</h1>
+       <p>Scelerisque tempor magnis vehicula pharetra eu justo dis donec dignissim rutrum bibendum</p>
+      </div>
+      <!-- Second Box 3 -->
+      <div class="second-box">
+        <img
+        class="widget-img"
+        src="{% static 'img/Service6.png' %}"
+        alt="Widget 4"
+        height="100px"
+      />
+        <h1>Spareparts</h1>
+        <p>Scelerisque tempor magnis vehicula pharetra eu justo dis donec dignissim rutrum bibendum</p>
+      </div>
+    </div>
+
+   
+
+    <!-- Bottom-left content -->
+ 
+    </div>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>Contact us: example@email.com</p>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+      </div>
+      <div class="social-media">
+        <!-- Font Awesome icons -->
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+      </div>
+    </footer>
+  </body>
+</html>

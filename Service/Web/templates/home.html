@@ -1,0 +1,265 @@
+<!-- myapp/templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homepage</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+      /* Set background image for the specific section */
+      .section-background {
+        background-image: url('{% static "img/background.jpg" %}');
+        background-repeat: no-repeat;
+        width: 98vw; /* 100% viewport width */
+        height: 97vh; /* 100% viewport height */
+        font-family: Arial, sans-serif;
+        margin: 0; /* Remove default margins */
+        padding: 0; /* Remove default padding */
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        background-size: cover; /* Cover the entire container */
+        background-position: center; /* Center the image */
+        position: relative; /* Set position relative for absolute positioning */
+      }
+
+      /* Basic styling for the menu bar */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 20px; /* Adjust as needed for vertical position */
+        right: 20px; /* Adjust as needed for horizontal position */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center items horizontally */
+      }
+
+      li {
+        margin-left: 20px;
+      }
+
+      li a {
+        display: block;
+        color: rgb(246, 243, 243);
+        text-align: center;
+        text-decoration: none;
+        padding: 14px 16px;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+      /* Style for the logo */
+      .logo {
+        position: absolute;
+        top: 20px; /* Adjust as needed for vertical position */
+        left: 20px; /* Adjust as needed for horizontal position */
+        max-width: 80px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      /* Additional styles for content */
+      .content {
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .widgets-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between widgets */
+  margin-top: 40px; /* Increased margin from the section */
+  padding: 0 20px; /* Add padding to the sides for space */
+ 
+     
+}
+.widgets-visible {
+      top: 0; /* Bring the widgets section into view */
+    }
+
+
+      /* Style for each widget */
+      .widget {
+  width: 290px; /* Set a fixed width for each widget */
+  text-align: center; /* Center align widget content */
+  padding: 20px; /* Add padding around each widget */
+  border-radius: 8px; /* Add border-radius for a rounded appearance */
+  background-color: rgba(255, 255, 255, 0.1); /* Widget background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow for depth */
+}
+
+
+      /* Style for widget images */
+      .widget-img {
+        width: 50%; /* Adjust image width to fill the container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 15px; /* Add space between image and text */
+      }
+
+      /* Style for widget paragraphs */
+      .widget-description {
+        color: #0997d8;
+        /* Add more styling if needed */
+      }
+      .site-footer {
+        position: relative;
+        bottom: -10px;
+        width: 97%;
+        background-color: #1490ee;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-content {
+        flex: 1;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+      }
+
+      .footer-links li {
+        display: inline;
+      }
+
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .social-media a {
+        color: #f8f6f6;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+
+      /* Adjust the size of icons as needed */
+      .social-media a {
+        font-size: 1.5rem;
+      }
+
+      #showWidgetsButton {
+        background-color: rgba(4, 209, 250, 0.1); /* Widget background color */
+        box-shadow: 0 4px 8px rgba(3, 176, 239, 0.1); /* Add box-shadow for depth */
+        border-radius: 8px; /* Adjust the border radius for curved corners */
+        width: 50%;
+        height: 50%;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Adding the menu and content within the background section -->
+    <div class="section-background">
+      <img class="logo" src="{% static 'img/logo.png' %}" alt="Logo" />
+
+      <ul>
+        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{% url 'About' %}"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="{% url 'Service' %}"><i class="fas fa-tools"></i> Service</a></li>
+        <li><a href="{% url 'Contact' %}"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        <li><a href="{% url 'Login' %}"><i class="fas fa-user"></i> Login</a></li>
+
+        <!-- Add other menu items with icons as needed -->
+      </ul>
+      
+
+      <!-- Content -->
+      <div class="content">
+        <h1>Welcome to Laptop Service</h1>
+        <button id="showWidgetsButton">GO TO EXPLORE</button> <!-- New button added -->
+      </div>
+    </div>
+
+    <div class="widgets-container" id="widgetsContainer">
+      <div class="widget">
+        <img
+          class="widget-img"
+          src="{% static 'img/widget1.png' %}"
+          alt="Widget 1"
+        />
+        <p class="widget-description">
+          Reliable Mobile Repairs: Trust our certified technicians for prompt
+          diagnostics and expert solutions, ensuring your mobile device is
+          swiftly restored to its optimal performance.
+        </p>
+      </div>
+      <div class="widget">
+        <img
+          class="widget-img"
+          src="{% static 'img/widget2.png' %}"
+          alt="Widget 2"
+        />
+        <p class="widget-description">
+          Efficient Laptop Solutions: Rely on our skilled technicians for
+          comprehensive diagnostics and efficient repairs, ensuring your laptop
+          operates at its best.
+        </p>
+      </div>
+      <div class="widget">
+        <img
+          class="widget-img"
+          src="{% static 'img/widget3.png' %}"
+          alt="Widget 3"
+        />
+        <p class="widget-description">
+          Tablet Expertise: Count on our specialized technicians for proficient
+          diagnostics and tailored solutions, restoring your tablet to peak
+          performance.
+        </p>
+      </div>
+      <div class="widget">
+        <img
+          class="widget-img"
+          src="{% static 'img/widget4.png' %}"
+          alt="Widget 4"
+        />
+        <p class="widget-description">
+          PC & Mac Mastery: Trust our seasoned experts for thorough diagnostics
+          and customized solutions, ensuring your PC or Mac runs seamlessly.
+        </p>
+      </div>
+      <!-- Add more widgets similarly -->
+    </div>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>Contact us: example@email.com</p>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+      </div>
+      <div class="social-media">
+        <!-- Font Awesome icons -->
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+      </div>
+    </footer>
+    <script>
+      // JavaScript function to scroll to the widgets section
+      document.getElementById('showWidgetsButton').addEventListener('click', function() {
+        var widgetsContainer = document.getElementById('widgetsContainer');
+        widgetsContainer.style.display = 'flex'; // Show the widgets container as flex
+        widgetsContainer.scrollIntoView({ behavior: 'smooth' }); // Scroll to the widgets
+      });
+    </script>
+  
+  </body>
+</html>
